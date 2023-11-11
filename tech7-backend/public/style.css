@@ -1,30 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,300&family=Lato:ital@1&family=Noto+Serif+Old+Uyghur&family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&display=swap');
+
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-  }
-
- 
-
-  .navbar {
-    display: flex;
-    justify-content: center;
-    background-color: #444;
-    padding: 10px;
-  }
-
-  .navbar a {
+    background-color:var( --maincolor);
     color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    margin: 0 10px;
-    border-radius: 5px;
-    transition: all;
-    transition-duration: 300ms;
-    transition-property: all;
-    transition-timing-function: ease-in-out;
-    transition-delay: 0s;
   }
 
-  .navbar a:hover {
-    background-color: #555;
+  * {
+    box-sizing: border-box;
+}
+:root {
+    --maincolor: #0066F5;
+    --secnodarycolor: white;
+}
+.header  {
+    background-color: var(--maincolor)
+}
+.header .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: center;
+}
+.header .container h3 {
+    color: var(--secnodarycolor);
+    padding: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.header .container ul {
+    list-style: none;
+    width: 40%;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.header .container ul li a {
+    color: var(--secnodarycolor);
+    text-decoration: none;
+    text-transform: capitalize;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: relative;
+}
+.header .container ul li a::before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    background-color: var(--secnodarycolor);
+    visibility: hidden;
+}
+.header .container ul li a:hover::before {
+    visibility: visible;
+}
+  .container-center-column{
+    padding: 50px;
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9%;
+    flex-direction: column;
+  }
+
+  .container-center-column h1{
+    font-family: 'Noto Serif Old Uyghur', serif;
+    font-weight: 600;
+    font-size: 80px;
+    letter-spacing: 0.2rem;
+    text-align: center;
+  }
+
+  .container-center-column p{
+    font-size: medium;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    
   }

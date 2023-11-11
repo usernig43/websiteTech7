@@ -6,6 +6,7 @@ import { dirname } from 'path';
 //nell'ultima versione non esiste dirname quindi ho usato un'altro metodo
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+const port=process.env.PORT || 5000;
 const app=express();
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -14,11 +15,11 @@ app.get("/",(req,res)=>{
     res.sendFile(path.join(__dirname,"public","home.html"));
 
 
-})
+});
 
-app.listen("7000",()=>{
-    console.log("Server sta aspettando la porta 7000");
-})
+app.listen(port,()=>{
+    console.log("Server sta ascoltando porta:"+port);
+});
 
 
 
