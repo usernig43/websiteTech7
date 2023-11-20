@@ -3,28 +3,80 @@
 
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color:var( --maincolor);
+    font-size: 16px;
     color: white;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: visible;
+    /* overflow-x: hidden;
+    overflow-y: hidden; */
   }
+  section{
+    width: 100%;
+    height: 100vh;
+    margin: 0px;
+    /* overflow-x: hidden;
+    overflow-y: hidden; */
+  }
+  
 
   * {
     box-sizing: border-box;
+    }
+
+    /*Inizio classi css di utilità*/
+.container{
+  width: 100%;
+  height: auto;
+
 }
+
+.flex-center-row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+
+}
+.flex-center-column{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+.flex-right-row{
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+.flex-leftt-row{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+/*Fine classi css di utilità*/
 :root {
     --maincolor: #0066F5;
     --secnodarycolor: white;
+    --rowbackground:#0066f589;
+    --descriptioncolor:rgb(169, 169, 169);
 }
 .header  {
-    background-color: var(--maincolor)
+    background-color: var(--maincolor);
+    height: 15vh;
 }
-.header .container {
+.header .inner-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between; 
     align-items: center;
 }
-.header .container h3 {
+.header .inner-container h3 {
     color: var(--secnodarycolor);
     padding: 10px;
     font-weight: bold;
@@ -32,7 +84,7 @@ body {
     font-size: 30px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.header .container ul {
+.header .inner-container ul {
     list-style: none;
     width: 40%;
     height: 50px;
@@ -40,14 +92,14 @@ body {
     justify-content: space-around;
     align-items: center;
 }
-.header .container ul li a {
+.header .inner-container ul li a {
     color: var(--secnodarycolor);
     text-decoration: none;
     text-transform: capitalize;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     position: relative;
 }
-.header .container ul li a::before {
+.header .inner-container ul li a::before {
     content: "";
     width: 100%;
     height: 1px;
@@ -57,31 +109,114 @@ body {
     background-color: var(--secnodarycolor);
     visibility: hidden;
 }
-.header .container ul li a:hover::before {
+.header .inner-container ul li a:hover::before {
     visibility: visible;
 }
-  .container-center-column{
-    padding: 50px;
-    width: 100%;
-    height: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15%;
-    flex-direction: column;
-  }
 
-  .container-center-column h1{
-    font-family: 'Noto Serif Old Uyghur', serif;
-    font-weight: 600;
-    font-size: 80px;
-    letter-spacing: 0.2rem;
-    text-align: center;
-  }
+#title-container{
+  text-align: center;
+  height:65vh ;
+  gap: 10%;
+}
 
-  .container-center-column p{
-    font-size: medium;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 400;
-    
-  }
+#title-container h1{
+  font-size: 80px;
+  font-weight: 800;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.2rem;
+  animation: mostraElemento 3.5s ease-in-out 0s 1 backwards ;
+}
+
+#title-container p{
+  font-size: 24px;
+  font-family:Arial, Helvetica, sans-serif ;
+  animation: mostraElemento 4s ease-in-out 0s 1 backwards ;
+
+}
+
+.arrow-container{
+  height: 10vh;
+}
+
+.arrow-container img{
+  width: 10%;
+  height: 85%;
+  border: 1px solid transparent;
+  border-radius: 25%;
+  background-color: var(--rowbackground);
+
+}
+
+#second-section{
+  background-color: var(--secnodarycolor);
+
+}
+
+.description-container{
+  height: 80vh;
+}
+
+.description-container div{
+
+  height: 100%;
+  padding: 50px;
+
+
+}
+
+.description-container div:nth-child(1){
+  width: 60%;
+}
+
+.description-container div:nth-child(2){
+  width: 40%;
+}
+
+.description-container div img{
+width: 80%;
+height: 70%;
+
+
+}
+
+.description-container div p{
+  font-size: 25px;
+  text-align: justify;
+  width: 45%;
+  border-left: 3px solid var(--maincolor);
+  color: var(--descriptioncolor);
+  line-height: 1.3;
+  padding: 20px;
+
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Inizio Animazioni*/
+
+@keyframes mostraElemento {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+  
+}
+
+
+
+/*Fine Animazioni*/
